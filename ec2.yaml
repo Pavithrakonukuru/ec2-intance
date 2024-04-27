@@ -1,0 +1,36 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Create an EC2 instance
+
+Parameters:
+  InstanceType:
+    Type: String
+    Default: t2.micro
+    Description: EC2 instance type
+  ImageId:
+    Type: AWS::EC2::Image::Id
+    Description: ID of the Amazon Machine Image (AMI) to use
+  KeyName:
+    Type: AWS::EC2::KeyPair::KeyName
+    Description: Name of the EC2 key pair for SSH access
+  SecurityGroupIds:
+    Type: List<AWS::EC2::SecurityGroup::Id>
+    Description: IDs of the security groups for the instance
+  SubnetId:
+    Type: AWS::EC2::Subnet::Id
+    Description: ID of the subnet where the instance will be launched
+  EC2Name:
+    Type: String
+    Description: Name of the EC2 instance
+
+Resources:
+  MyEC2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: !Ref InstanceType
+      ImageId: !Ref ImageId
+      KeyName: !Ref KeyName
+      SecurityGroupIds: !Ref SecurityGroupIds
+      SubnetId: !Ref SubnetId
+      Tags:
+        - Key: Name
+          Value: !Ref EC2Name
