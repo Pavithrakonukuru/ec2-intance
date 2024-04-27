@@ -11,7 +11,7 @@ pipeline {
         stage('Deploy CloudFormation Stack') {
             steps {
                 script {
-                    withAWS(region: AWS_DEFAULT_REGION, credentials: 'aws-credentials-id') {
+                    withAWS(region: AWS_DEFAULT_REGION, credentials: 'Nani') {
                         sh "aws cloudformation deploy --stack-name ${STACK_NAME} --template-file ${TEMPLATE_FILE} --capabilities CAPABILITY_NAMED_IAM"
                     }
                 }
