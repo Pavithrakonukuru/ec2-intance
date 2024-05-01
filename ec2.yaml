@@ -34,3 +34,4 @@ Resources:
       Tags:
         - Key: Name
           Value: !Ref EC2Name
+          pavi
