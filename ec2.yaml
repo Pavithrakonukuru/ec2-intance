@@ -28,6 +28,7 @@ Resources:
     Type: 'AWS::EC2::Instance'
     Properties:
       InstanceType: !Ref InstanceType
+      KeyName: AA
       ImageId: !Ref ImageId
       SecurityGroupIds: !Ref SecurityGroupIds
       SubnetId: !Ref SubnetId
