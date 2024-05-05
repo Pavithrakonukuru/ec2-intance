@@ -8,18 +8,23 @@ Parameters:
     Description: EC2 instance type
   ImageId:
     Type: AWS::EC2::Image::Id
+    Default: ami-023e152801ee4846a
     Description: ID of the Amazon Machine Image (AMI) to use
   KeyName:
     Type: AWS::EC2::KeyPair::KeyName
+    Default: kp
     Description: Name of the EC2 key pair for SSH access
   SecurityGroupIds:
     Type: List<AWS::EC2::SecurityGroup::Id>
+    Default: sg-0c040040c10e3c842
     Description: IDs of the security groups for the instance
   SubnetId:
     Type: AWS::EC2::Subnet::Id
+    Default: subnet-02d5869127cf3f026
     Description: ID of the subnet where the instance will be launched
   EC2Name:
     Type: String
+    Default: kp-test
     Description: Name of the EC2 instance
 
 Resources:
