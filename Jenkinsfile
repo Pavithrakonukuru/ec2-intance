@@ -9,10 +9,10 @@ pipeline {
 
     parameters {
         string(name: 'InstanceType', defaultValue: 't2.micro', description: 'EC2 instance type')
-        string(name: 'ImageId', description: 'ID of the Amazon Machine Image (AMI) to use')
-        string(name: 'SecurityGroupIds', description: 'IDs of the security groups for the instance')
-        string(name: 'SubnetId', description: 'ID of the subnet where the instance will be launched')
-        string(name: 'EC2Name', description: 'Name of the EC2 instance')
+        string(name: 'ImageId', defaultValue: 'ami-023e152801ee4846a', description: 'ID of the Amazon Machine Image (AMI) to use')
+        string(name: 'SecurityGroupIds', defaultValue: 'sg-0c040040c10e3c842', description: 'IDs of the security groups for the instance')
+        string(name: 'SubnetId', defaultValue: 'subnet-02d5869127cf3f026', description: 'ID of the subnet where the instance will be launched')
+        string(name: 'EC2Name', defaultValue: 'ami-test', description: 'Name of the EC2 instance')
     }
     stages {
         stage('Deploy CloudFormation Stack') {
