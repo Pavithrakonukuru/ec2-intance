@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         AWS_DEFAULT_REGION = 'us-west-2' // Replace with your AWS region
-        STACK_NAME = 'MyEC2Stack' // Replace with your desired CloudFormation stack name
+        STACK_NAME = 'MyEC2Stackkk' // Replace with your desired CloudFormation stack name
         TEMPLATE_FILE = 'ec2.yaml' // Replace with the path to your CloudFormation template file
     }
 
