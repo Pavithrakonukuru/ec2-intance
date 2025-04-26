@@ -1,0 +1,10 @@
+name: Abc
+
+on:
+  schedule:
+    - cron: "00 13 * * *"
+jobs:
+  setup:
+    runs-on:
+    steps:
+  trigger:
